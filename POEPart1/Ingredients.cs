@@ -9,10 +9,10 @@ namespace POEPart1
     internal class Ingredients
     {
         private String inName { get; set; }
-        private int inQuantity { get; set; }
+        private double inQuantity { get; set; }
         private String inUnit { get; set; }
 
-        public Ingredients(String iN, int iQ, String iU) 
+        public Ingredients(String iN, double iQ, String iU) 
         {
             inName = iN;
             inQuantity = iQ;
@@ -28,13 +28,13 @@ namespace POEPart1
             inName = s;
         }
 
-        public int getinQuantity()
+        public double getinQuantity()
         {
             return inQuantity;
         }
-        public void setinQuantity(int q)
+        public void setinQuantity(double q)
         {
-            inQuantity = q;
+            inQuantity *= q;
         }
 
         public String getinUnit()
@@ -44,6 +44,11 @@ namespace POEPart1
         public void setinUnit(String u)
         {
             inUnit = u;
+        }
+
+        public void undoScale(double amount) 
+        {
+            inQuantity /= amount;
         }
 
         public String toString() 

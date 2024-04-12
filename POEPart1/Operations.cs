@@ -35,7 +35,7 @@ namespace POEPart1
                 String measurement = Console.ReadLine();
 
                 Console.WriteLine("Please enter quantity:");
-                int quantity = Int32.Parse(Console.ReadLine());
+                double quantity = double.Parse(Console.ReadLine());
 
                 
                 ingArr.Add(new Ingredients(name, quantity, measurement));
@@ -71,6 +71,14 @@ namespace POEPart1
             foreach (Steps s in stepArr)
             {
                 Console.WriteLine(s.toString());
+            }
+        }
+
+        public void scaleRecipie(double scale) 
+        {
+            foreach (Ingredients i in ingArr)
+            {
+                i.setinQuantity(scale);
             }
         }
 
