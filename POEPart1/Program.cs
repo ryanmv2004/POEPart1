@@ -69,7 +69,8 @@ namespace POEPart1
                 }
                 if (choice == 5) 
                 {
-                    
+                    ops.opsUnScale(scaleAmount);
+                    scaleAmount = 0;
                 }
                 if (choice == 6)
                 {

@@ -82,6 +82,14 @@ namespace POEPart1
             }
         }
 
+        public void opsUnScale(double scale) 
+        {
+            foreach (Ingredients i in ingArr)
+            {
+                i.undoScale(scale);
+            }
+        }
+
         public void deleteRecipies() 
         {
             ingArr.Clear();
