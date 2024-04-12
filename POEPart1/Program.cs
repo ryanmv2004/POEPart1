@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,8 @@ namespace POEPart1
             Boolean SENTINAL = true;
             while (SENTINAL)
             {
-
+                Ingredients[] ingArr;
+                Steps[] stepArr;
 
                 Console.WriteLine("Welcome to the Recipie Storage App!");
                 Console.WriteLine("------------------------------------");
@@ -29,7 +31,28 @@ namespace POEPart1
                 int choice = Int32.Parse(Console.ReadLine());
                 if (choice == 1) 
                 {
-                    Console.WriteLine("1");
+                    Console.WriteLine(); 
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine("Please enter to amount of ingredients to be used:");
+                    int numIngredients = Int32.Parse(Console.ReadLine());
+
+                    ingArr = new Ingredients[numIngredients];
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    for (int i = 0; i < numIngredients; i++) 
+                    {
+                        Console.WriteLine("Please enter the ingredient name:");
+                        String name = Console.ReadLine();
+
+                        Console.WriteLine("Please enter ingredient measurement:");
+                        String measurement = Console.ReadLine();
+
+                        Console.WriteLine("Please enter quantity:");
+                        int quantity = Int32.Parse(Console.ReadLine());
+
+                        ingArr[i] = new Ingredients(name, quantity, measurement);
+                    }
                 }
                 if (choice == 2) 
                 {
