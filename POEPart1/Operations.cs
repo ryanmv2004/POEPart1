@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -60,7 +61,8 @@ namespace POEPart1
 
         public void displayRecipie()
         {
-            Console.WriteLine("Ingredients:");
+
+            Console.WriteLine("\n" + "\n" + "Ingredients:");
             foreach (Ingredients i in ingArr)
             {
                 Console.WriteLine(i.toString());
@@ -68,9 +70,11 @@ namespace POEPart1
             Console.WriteLine();
             Console.WriteLine("Steps:");
 
+            int counter = 1;
             foreach (Steps s in stepArr)
             {
-                Console.WriteLine(s.toString());
+                Console.WriteLine(counter + ") " + s.toString());
+                counter++;
             }
         }
 

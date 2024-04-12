@@ -53,7 +53,7 @@ namespace POEPart1
 
         public String toString() 
         {
-           return getinName() + getinQuantity() + getinUnit();
+           return getinName() + "\t" +  getinQuantity() + getinUnit();
         }
         
 
