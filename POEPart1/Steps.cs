@@ -9,5 +9,10 @@ namespace POEPart1
     internal class Steps
     {
         private String steps { get; set; }
+
+        public Steps(String s) 
+        {
+            s = steps;
+        }
     }
 }

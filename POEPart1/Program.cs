@@ -14,8 +14,8 @@ namespace POEPart1
             Boolean SENTINAL = true;
             while (SENTINAL)
             {
-                Ingredients[] ingArr;
-                Steps[] stepArr;
+                List<Ingredients> ingArr = new List<Ingredients>();
+                List<Steps> stepArr = new List<Steps>();
 
                 Console.WriteLine("Welcome to the Recipie Storage App!");
                 Console.WriteLine("------------------------------------");
@@ -37,7 +37,6 @@ namespace POEPart1
                     Console.WriteLine("Please enter to amount of ingredients to be used:");
                     int numIngredients = Int32.Parse(Console.ReadLine());
 
-                    ingArr = new Ingredients[numIngredients];
                     Console.WriteLine();
                     Console.WriteLine();
                     for (int i = 0; i < numIngredients; i++) 
@@ -51,12 +50,35 @@ namespace POEPart1
                         Console.WriteLine("Please enter quantity:");
                         int quantity = Int32.Parse(Console.ReadLine());
 
-                        ingArr[i] = new Ingredients(name, quantity, measurement);
+                        Ingredients ing = new Ingredients(name, quantity, measurement);
+                        ingArr.Add(ing);
+                    }
+
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine("Enter the amount of steps in the recipie");
+                    Console.ReadLine();
+                    int stepsNum = Int32.Parse(Console.ReadLine());
+
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    for(int i = 0;i < stepsNum;i++) 
+                    {
+                        Console.WriteLine("Enter description for step " + i + ":");
+                        String description = Console.ReadLine();
+                        Steps s = new Steps(description);
+                        stepArr.Add(s);
                     }
                 }
                 if (choice == 2) 
                 {
-                    Console.WriteLine("2");
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    for (int i = 0; i < ingArr.Count-1; i++)
+                    {
+                        Ingredients ingDisplay = new Ingredients();
+                        Console.WriteLine(ingArr.ingDisplay.ToString());
+                    }
                 }
                 if (choice == 3)
                 {

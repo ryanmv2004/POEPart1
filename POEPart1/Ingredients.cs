@@ -19,5 +19,14 @@ namespace POEPart1
             iU = inUnit;
         }
 
+        public String toString() 
+        {
+            return inName + "\n" + inQuantity + " " + inUnit;
+        }
+        public Ingredients() 
+        {
+
+        }
+
     }
 }
