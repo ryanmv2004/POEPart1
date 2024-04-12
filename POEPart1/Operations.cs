@@ -73,5 +73,11 @@ namespace POEPart1
                 Console.WriteLine(s.toString());
             }
         }
+
+        public void deleteRecipies() 
+        {
+            ingArr.Clear();
+            stepArr.Clear();
+        }
     }
 }
