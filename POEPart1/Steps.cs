@@ -14,5 +14,15 @@ namespace POEPart1
         {
             s = steps;
         }
+
+        public String getSteps() 
+        {
+            return steps;
+        }
+
+        public void setSteps(String s) 
+        {
+            steps = s;
+        }
     }
 }

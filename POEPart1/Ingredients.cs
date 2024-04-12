@@ -19,14 +19,38 @@ namespace POEPart1
             iU = inUnit;
         }
 
+        public String getinName()
+        {
+            return inName;
+        }
+        public void setinName(String s) 
+        {
+            inName = s;
+        }
+
+        public int getinQuantity()
+        {
+            return inQuantity;
+        }
+        public void setinQuantity(int q)
+        {
+            inQuantity = q;
+        }
+
+        public String getinUnit()
+        {
+            return inUnit;
+        }
+        public void setinUnit(String u)
+        {
+            inUnit = u;
+        }
+
         public String toString() 
         {
-            return inName + "\n" + inQuantity + " " + inUnit;
+            return getinName() + "\n" + getinQuantity() + " " + getinUnit();
         }
-        public Ingredients() 
-        {
-
-        }
+        
 
     }
 }

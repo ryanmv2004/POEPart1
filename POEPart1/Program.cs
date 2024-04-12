@@ -34,7 +34,7 @@ namespace POEPart1
                     Console.WriteLine(); 
                     Console.WriteLine();
                     Console.WriteLine();
-                    Console.WriteLine("Please enter to amount of ingredients to be used:");
+                    Console.WriteLine("Please enter the amount of ingredients to be used:");
                     int numIngredients = Int32.Parse(Console.ReadLine());
 
                     Console.WriteLine();
@@ -57,7 +57,6 @@ namespace POEPart1
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("Enter the amount of steps in the recipie");
-                    Console.ReadLine();
                     int stepsNum = Int32.Parse(Console.ReadLine());
 
                     Console.WriteLine();
@@ -74,10 +73,10 @@ namespace POEPart1
                 {
                     Console.WriteLine();
                     Console.WriteLine();
-                    for (int i = 0; i < ingArr.Count-1; i++)
+                    Console.WriteLine(ingArr.Count);
+                    foreach (Ingredients i in ingArr) 
                     {
-                        Ingredients ingDisplay = new Ingredients();
-                        Console.WriteLine(ingArr.ingDisplay.ToString());
+                        Console.WriteLine(i.ToString());
                     }
                 }
                 if (choice == 3)
