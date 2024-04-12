@@ -12,7 +12,7 @@ namespace POEPart1
 
         public Steps(String s) 
         {
-            s = steps;
+            steps = s;
         }
 
         public String getSteps() 
@@ -23,6 +23,11 @@ namespace POEPart1
         public void setSteps(String s) 
         {
             steps = s;
+        }
+
+        public String toString() 
+        {
+            return getSteps();
         }
     }
 }

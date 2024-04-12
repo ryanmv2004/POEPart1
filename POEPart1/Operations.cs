@@ -7,18 +7,16 @@ using System.Threading.Tasks;
 
 namespace POEPart1
 {
-    internal class Operations
+    class Operations
     {
-        private ArrayList ingArr;
-        private ArrayList stepArr;
+        public List<Ingredients> ingArr = new List<Ingredients>();
+        public List<Steps> stepArr = new List<Steps>();
 
         public Operations()
         {
-            ingArr = new ArrayList();
-            stepArr = new ArrayList();
         }
 
-        public void enterRecipie() 
+        public void enterRecipie()
         {
             Console.WriteLine();
             Console.WriteLine();
@@ -39,9 +37,10 @@ namespace POEPart1
                 Console.WriteLine("Please enter quantity:");
                 int quantity = Int32.Parse(Console.ReadLine());
 
-                Ingredients ing = new Ingredients(name, quantity, measurement);
-                ingArr.Add(ing);
+                
+                ingArr.Add(new Ingredients(name, quantity, measurement));
             }
+            Console.WriteLine(ingArr.Count());
 
             Console.WriteLine();
             Console.WriteLine();
@@ -54,23 +53,25 @@ namespace POEPart1
             {
                 Console.WriteLine("Enter description for step " + i + ":");
                 String description = Console.ReadLine();
-                Steps s = new Steps(description);
-                stepArr.Add(s);
+                stepArr.Add(new Steps(description));
             }
+            Console.WriteLine(stepArr.Count());
         }
 
-        public void displayRecipie() 
+        public void displayRecipie()
         {
-            Console.WriteLine();
-            Console.WriteLine();
             Console.WriteLine("Ingredients:");
             foreach (Ingredients i in ingArr)
             {
-                Console.WriteLine(i.ToString());
+                Console.WriteLine(i.toString());
+            }
+            Console.WriteLine();
+            Console.WriteLine("Steps:");
+
+            foreach (Steps s in stepArr)
+            {
+                Console.WriteLine(s.toString());
             }
         }
-    }
-
-
     }
 }

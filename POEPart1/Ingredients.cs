@@ -14,9 +14,9 @@ namespace POEPart1
 
         public Ingredients(String iN, int iQ, String iU) 
         {
-            iN = inName;
-            iQ = inQuantity;
-            iU = inUnit;
+            inName = iN;
+            inQuantity = iQ;
+            inUnit = iU;
         }
 
         public String getinName()
@@ -48,7 +48,7 @@ namespace POEPart1
 
         public String toString() 
         {
-            return getinName() + "\n" + getinQuantity() + " " + getinUnit();
+           return getinName() + getinQuantity() + getinUnit();
         }
         
 
