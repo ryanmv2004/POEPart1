@@ -43,7 +43,14 @@ namespace POEPart1
                 }
                 if (choice == 4) 
                 {
-                    Console.WriteLine("4");
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine("Type Y to confirm this choice and N to go back");
+                    String deleteChoice = Console.ReadLine();
+                    if (deleteChoice.Equals("Y" , StringComparison.OrdinalIgnoreCase))
+                    {
+                        ops.deleteRecipies();
+                    }
                 }
                 if (choice == 5) 
                 {
