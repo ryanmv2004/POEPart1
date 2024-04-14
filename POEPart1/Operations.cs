@@ -21,9 +21,29 @@ namespace POEPart1
         {
             Console.WriteLine();
             Console.WriteLine();
-            Console.WriteLine();
             Console.WriteLine("Please enter the amount of ingredients to be used:");
-            int numIngredients = Int32.Parse(Console.ReadLine());
+            String preCheckIngredients = Console.ReadLine();
+
+            Boolean check = preCheckIngredients.All(char.IsDigit); //Lifted from https://stackoverflow.com/questions/18251875/in-c-how-to-check-whether-a-string-contains-an-integer
+        
+            if (check == false) 
+            {
+                
+                Boolean corrected = false;
+                while (corrected == false) 
+                {
+                    Console.WriteLine("Your entry was invalid, please try again");
+                    String postCheck = Console.ReadLine();
+                    check = postCheck.All(char.IsDigit);
+                    if (check)
+                    {
+                        corrected = true;
+                        preCheckIngredients = postCheck;
+                    }
+                }
+            }
+
+            int numIngredients = Int32.Parse(preCheckIngredients);
 
             Console.WriteLine();
             Console.WriteLine();
@@ -44,19 +64,17 @@ namespace POEPart1
             Console.WriteLine(ingArr.Count());
 
             Console.WriteLine();
-            Console.WriteLine();
             Console.WriteLine("Enter the amount of steps in the recipie");
             int stepsNum = Int32.Parse(Console.ReadLine());
 
             Console.WriteLine();
             Console.WriteLine();
-            for (int i = 0; i < stepsNum; i++)
+            for (int i = 1; i < stepsNum + 1; i++)
             {
                 Console.WriteLine("Enter description for step " + i + ":");
                 String description = Console.ReadLine();
                 stepArr.Add(new Steps(description));
             }
-            Console.WriteLine(stepArr.Count());
         }
 
         public void displayRecipie()
