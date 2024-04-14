@@ -45,7 +45,21 @@ namespace POEPart1
                     Console.WriteLine();
                     Console.WriteLine("Please enter the scale which you want to multiply the recipie by:");
                     Console.WriteLine("This can either be 0.5, 2 or 3");
-                    double scale = double.Parse(Console.ReadLine());
+                    String scalePreCheck = Console.ReadLine();
+
+                    Boolean check = false;
+                    while(check == false) 
+                    {
+                        if (scalePreCheck.Equals("0.25") || scalePreCheck.Equals("2") || scalePreCheck.Equals("3")) 
+                        {
+                            check = true;
+                            break;
+                        }
+                        Console.WriteLine("Your entry was invalid, please try again");
+                        scalePreCheck = Console.ReadLine();
+                    }
+
+                    double scale = double.Parse(scalePreCheck);
 
                     ops.scaleRecipie(scale);
 

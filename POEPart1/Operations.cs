@@ -24,9 +24,9 @@ namespace POEPart1
             Console.WriteLine("Please enter the amount of ingredients to be used:");
             String preCheckIngredients = Console.ReadLine();
 
-            Boolean check = preCheckIngredients.All(char.IsDigit); //Lifted from https://stackoverflow.com/questions/18251875/in-c-how-to-check-whether-a-string-contains-an-integer
+            Boolean ingredientsCheck = preCheckIngredients.All(char.IsDigit); //Lifted from https://stackoverflow.com/questions/18251875/in-c-how-to-check-whether-a-string-contains-an-integer
         
-            if (check == false) 
+            if (ingredientsCheck == false) 
             {
                 
                 Boolean corrected = false;
@@ -34,8 +34,8 @@ namespace POEPart1
                 {
                     Console.WriteLine("Your entry was invalid, please try again");
                     String postCheck = Console.ReadLine();
-                    check = postCheck.All(char.IsDigit);
-                    if (check)
+                    ingredientsCheck = postCheck.All(char.IsDigit);
+                    if (ingredientsCheck)
                     {
                         corrected = true;
                         preCheckIngredients = postCheck;
@@ -65,7 +65,28 @@ namespace POEPart1
 
             Console.WriteLine();
             Console.WriteLine("Enter the amount of steps in the recipie");
-            int stepsNum = Int32.Parse(Console.ReadLine());
+            String preCheckSteps = Console.ReadLine();
+
+            Boolean stepsCheck = preCheckSteps.All(char.IsDigit);
+
+            if (stepsCheck == false)
+            {
+
+                Boolean corrected = false;
+                while (corrected == false)
+                {
+                    Console.WriteLine("Your entry was invalid, please try again");
+                    String postCheck = Console.ReadLine();
+                    stepsCheck = postCheck.All(char.IsDigit);
+                    if (stepsCheck)
+                    {
+                        corrected = true;
+                        preCheckSteps = postCheck;
+                    }
+                }
+            }
+
+            int stepsNum = Int32.Parse(preCheckSteps);
 
             Console.WriteLine();
             Console.WriteLine();
