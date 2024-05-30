@@ -18,17 +18,19 @@ namespace POEPart1
             Boolean SENTINAL = true; // sentinal value that keeps track if the program must still be running.
             while (SENTINAL)
             {
-
+                Console.WriteLine();
+                Console.WriteLine();
                 Console.WriteLine("Welcome to the Recipie Storage App!");
                 Console.WriteLine("------------------------------------");
                 Console.WriteLine();
                 Console.WriteLine("Please make a Selection on which tool to use:");
-                Console.WriteLine("1) Enter Recipie");
-                Console.WriteLine("2) Display Recipie");
-                Console.WriteLine("3) Scale Recipie");
-                Console.WriteLine("4) Clear all Recipies");
-                Console.WriteLine("5) Scale Recipies back to Original");
-                Console.WriteLine("6) Exit");
+                Console.WriteLine("1) Enter Recipe");
+                Console.WriteLine("2) Display Recipes");
+                Console.WriteLine("3) Search Recipes");
+                Console.WriteLine("4) Scale Recipie");
+                Console.WriteLine("5) Clear all Recipies");
+                Console.WriteLine("6) Scale Recipies back to Original");
+                Console.WriteLine("7) Exit");
                 Console.WriteLine("------------------------------------");
                 Console.WriteLine("Please make a choice by entering only the tool number:"); //Writes a gui to the console from which the user must make a choice on what tool to use.
                 int choice = Int32.Parse(Console.ReadLine()); //saves this choice as an integer
@@ -38,12 +40,25 @@ namespace POEPart1
                 }
                 if (choice == 2) //If the user selects choice 2
                 {
-                    ops.displayRecipie(); //Calls the display recipie method from the Operations class using the ops object.
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    ops.displayRecipes(); //Calls the display recipes method from the Operations class using the ops object.
                 }
-                if (choice == 3) //If the user selects choice 3
+                if (choice == 3) 
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Please enter the recipe to search:");
+                    String search = Console.ReadLine();
+                    Console.WriteLine();
+
+                    ops.searchRecipe(search);
+                }
+                if (choice == 4) //If the user selects choice 3
                 {
                     Console.WriteLine();
                     Console.WriteLine();
+                    Console.WriteLine("Please enter Recipe to be scaled: ");
+                    String name = Console.ReadLine(); //Prompts the user to enter the name of the recipie they wish to scale and stores the response in a string variable.
                     Console.WriteLine("Please enter the scale which you want to multiply the recipie by:"); //Prompts the user to enter the value by which they want to scale the recipie
                     Console.WriteLine("This can either be 0.5, 2 or 3");
                     String scalePreCheck = Console.ReadLine(); //Saves the input in a string
@@ -62,12 +77,17 @@ namespace POEPart1
 
                     double scale = double.Parse(scalePreCheck); //Saves the string response in a double variable
 
-                    ops.scaleRecipie(scale); //Uses this double variable and calls the scale recipie method in the operations class and uses the variable as an arguement
+                    ops.scaleRecipie(scale, name); //Uses this double variable and calls the scale recipie method in the operations class and uses the variable as an arguement
 
                     scaleAmount = scale; //Saves the amount the recipie was scaled in the scaleAmount variable outside the main while loop for scaling the recipie back to the original.
                 }
-                if (choice == 4) //If the choice is 4
+                if (choice == 5) //If the choice is 4
                 {
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine("Enter Recipe to be Deleted: ");
+                    String name = Console.ReadLine(); //Prompts the user to enter the name of the recipie they wish to delete and stores the response in a string variable.
+
                     Console.WriteLine();
                     Console.WriteLine();
                     Console.WriteLine("Type Y to confirm this choice and N to go back");
@@ -75,19 +95,24 @@ namespace POEPart1
 
                     if (deleteChoice.Equals("Y", StringComparison.OrdinalIgnoreCase)) //If statement that verifies that they wanted to delete the recipie in any variation of the char 'Y'
                     {
-                        ops.deleteRecipies(); //Cals the ops object to make use of the deleteRecipies methos in the operations class.
+                        ops.deleteRecipies(name); //Cals the ops object to make use of the deleteRecipies methos in the operations class.
                     }
                     else //Else statement that does nothing
                     {
 
                     }
                 }
-                if (choice == 5) //If the user chooses choice 5
+                if (choice == 6) //If the user chooses choice 5
                 {
-                    ops.opsUnScale(scaleAmount); //Makes use of the scaleAmount variable to keep track of the amount the recipie was scaled and then uses this value as an arguement to divide the potions by that amount in the .
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine("Enter Recipie to return to original values: ");
+                    String name = Console.ReadLine();
+
+                    ops.opsUnScale(scaleAmount, name); //Makes use of the scaleAmount variable to keep track of the amount the recipie was scaled and then uses this value as an arguement to divide the potions by that amount in the .
                     scaleAmount = 0; //Resets this variable
                 }
-                if (choice == 6)
+                if (choice == 7)
                 {
                     SENTINAL = false; //Makes the sentinal value false
                     break; //breaks from the loops

@@ -10,13 +10,17 @@ namespace POEPart1
     {
         private String inName { get; set; }
         private double inQuantity { get; set; }
-        private String inUnit { get; set; } //declared private variables of the name of the ingredient, its quantity and unit of measurement
+        private String inUnit { get; set; } 
+        public double calories { get; set; }
+        public string foodGroup { get; set; } //declared private variables of the name of the ingredient, its quantity, unit of measurement, calories and food group.
 
-        public Ingredients(String iN, double iQ, String iU) //Parameterised constructor
+        public Ingredients(String iN, double iQ, String iU, double c, String fG) //Parameterised constructor
         {
             inName = iN;
             inQuantity = iQ;
             inUnit = iU;
+            calories = c;
+            foodGroup = fG;
         }
 
         public String getinName() //Getter for inName
@@ -34,7 +38,7 @@ namespace POEPart1
         }
         public void setinQuantity(double q) //Setter for inQuantity that serves to scale it
         {
-            inQuantity *= q;
+            inQuantity = q;
         }
 
         public String getinUnit() //Getter for inUnit
@@ -46,6 +50,25 @@ namespace POEPart1
             inUnit = u;
         }
 
+        public double getCalories() //Getter for inUnit
+        {
+            return calories;
+        }
+        public void setCalories(double c) //Setter for the calories variable
+        {
+            calories = c;
+        }
+
+        public String getFoodGroup() //Getter for the foodGroup variable
+        {
+            return foodGroup;
+        }
+
+        public void setFoodGroup(String f) //Setter for the foodGroup variable
+        {
+            foodGroup = f;
+        }
+
         public void undoScale(double amount)  //Method that divides the quantity by an amount
         {
             inQuantity /= amount;
@@ -53,9 +76,8 @@ namespace POEPart1
 
         public String toString() //Basic toString method that prints out all the Attributes of the class
         {
-           return getinName() + "\t" +  getinQuantity() + getinUnit();
+           return getinName() + "\t" +  getinQuantity() + getinUnit() + "\n" + getFoodGroup() + "\t" + getCalories();
         }
-        
 
     }
 }
