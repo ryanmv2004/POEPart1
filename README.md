@@ -18,3 +18,9 @@ Open it
 Click on the sln file at the bottom.
 Click open on bottom right.
 Run with Shift + F6 on the program class
+
+
+Updates for the Feedback given:
+Added better formatting compared to last time for the project,
+I have also added the functionality for the requirements for Part2,
+I have added error handling in the solution.
