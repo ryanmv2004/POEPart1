@@ -7,7 +7,7 @@ using System.Xml.Linq;
 
 namespace POEPart1
 {
-    internal class Recipe
+    public class Recipe
     {
         public string name { get; set; }
         public List<Ingredients> ingredients { get; set; }

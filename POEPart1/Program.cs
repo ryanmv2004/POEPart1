@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace POEPart1
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {

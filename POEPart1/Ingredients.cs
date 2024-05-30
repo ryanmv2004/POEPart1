@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace POEPart1
 {
-    internal class Ingredients //Class that holds the ingredients attributes
+    public class Ingredients //Class that holds the ingredients attributes
     {
         private String inName { get; set; }
         private double inQuantity { get; set; }

@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 
 namespace POEPart1
 {
-    class Operations //Class that holds all the operations to be performed
+    public class Operations //Class that holds all the operations to be performed
     {
         public List<Recipe> recArr = new List<Recipe>();
 

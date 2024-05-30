@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace POEPart1
 {
-    internal class Steps //class that holds the attrubutes for each step
+    public class Steps //class that holds the attrubutes for each step
     {
         private String steps { get; set; } //private variable
 
