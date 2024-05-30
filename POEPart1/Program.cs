@@ -11,7 +11,7 @@ namespace POEPart1
     {
         static void Main(string[] args)
         {
-
+            Console.ForegroundColor = ConsoleColor.Green; //Sets the console text colour to green
             Operations ops = new Operations(); //Creates an object of the operations class, does this outside the loop so that any array created is saved to the memory and not wiped between runs.
             double scaleAmount = 0; //Keeps a record outside the loop if the recipie is scaled, if so also how big it was scaled.
 
