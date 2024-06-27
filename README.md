@@ -24,3 +24,4 @@ Updates for the Feedback given:
 Added better formatting compared to last time for the project,
 I have also added the functionality for the requirements for Part2,
 I have added error handling in the solution.
+For Part3 I improved on how to display the items and added functionality to complete the project.
