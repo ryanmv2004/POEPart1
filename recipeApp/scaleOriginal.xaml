@@ -1,0 +1,17 @@
+﻿<Window x:Class="recipeApp.scaleOriginal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:recipeApp"
+        mc:Ignorable="d"
+        Title="scaleOriginal" Height="450" Width="800">
+    <Grid Background="#FFBCEED8">
+        <Label Content="Scale Back to Original?" HorizontalAlignment="Center" Margin="0,55,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Button x:Name="originalBtn" Content="Yes" HorizontalAlignment="Left" Margin="328,179,0,0" VerticalAlignment="Top" Click="originalBtn_Click"/>
+        <Button x:Name="goBackBtn" Content="Go Back" HorizontalAlignment="Left" Margin="400,179,0,0" VerticalAlignment="Top" Click="goBackBtn_Click"/>
+        <TextBox x:Name="recNameBox" HorizontalAlignment="Left" Margin="327,137,0,0" TextWrapping="Wrap" Text="&#xD;&#xA;" VerticalAlignment="Top" Width="120" Height="22"/>
+        <Label Content="Enter Recipe Name:" HorizontalAlignment="Left" Margin="330,106,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

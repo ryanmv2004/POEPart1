@@ -1,0 +1,15 @@
+﻿<Window x:Class="recipeApp.displayRecipies"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:recipeApp"
+        mc:Ignorable="d"
+        Title="displayRecipies" Height="450" Width="800">
+    <Grid Background="#FFADE0E2">
+        <Label Content="All Recipies" HorizontalAlignment="Center" Margin="0,31,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBox x:Name="recDisplayBox" HorizontalAlignment="Center" Margin="0,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="452" Height="317" TextChanged="recDisplayBox_TextChanged"/>
+        <Button x:Name="goBackBtn" Content="Go Back" HorizontalAlignment="Left" Margin="527,40,0,0" VerticalAlignment="Top" Click="goBackBtn_Click"/>
+        <Button x:Name="displayRecBtn" Content="Display All Recipies" HorizontalAlignment="Left" Margin="191,40,0,0" VerticalAlignment="Top" Click="displayRecBtn_Click"/>
+    </Grid>
+</Window>

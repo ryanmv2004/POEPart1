@@ -1,0 +1,36 @@
+﻿<Window x:Class="recipeApp.enterRecipe"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:recipeApp"
+        mc:Ignorable="d"
+        Title="enterRecipe" Height="450" Width="800">
+    <Grid Background="#FFA4D6C9">
+        <Label Content="Recipe Name:" HorizontalAlignment="Left" Margin="64,47,0,0" VerticalAlignment="Top" Background="{x:Null}"/>
+        <TextBox x:Name="recNameBox" HorizontalAlignment="Left" Margin="24,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
+        <Label Content="Ingredient Name:" HorizontalAlignment="Left" Margin="54,121,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="ingNameBox" HorizontalAlignment="Left" Margin="45,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Ingredient Measurement:" HorizontalAlignment="Left" Margin="32,191,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="ingMeasurementBox" HorizontalAlignment="Left" Margin="44,222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Ingredient Quantity:" HorizontalAlignment="Left" Margin="47,265,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="ingQuantityBox" HorizontalAlignment="Left" Margin="45,296,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Calories Contained:" HorizontalAlignment="Left" Margin="228,191,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="ingCaloriesBox" HorizontalAlignment="Left" Margin="224,222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="ingFGroupCBox" HorizontalAlignment="Left" Margin="224,294,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0">
+            <ComboBoxItem Content="Carbohydrates"/>
+                <ComboBoxItem Content="Protein"/>
+                <ComboBoxItem Content="Dairy Product"/>
+                <ComboBoxItem Content="Fruit and Veg"/>
+            <ComboBoxItem Content="Fats and Sugars"/>
+        </ComboBox>
+        <Label Content="Food Group:" HorizontalAlignment="Left" Margin="246,263,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="addIngredientBtn" Content="Add Ingredient" HorizontalAlignment="Left" Margin="47,348,0,0" VerticalAlignment="Top" Click="addIngredientBtn_Click"/>
+        <Label Content="Steps:" HorizontalAlignment="Left" Margin="508,191,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="stepsBox" HorizontalAlignment="Left" Margin="415,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" Height="38"/>
+        <Button x:Name="addStepBtn" Content="Add Step" HorizontalAlignment="Left" Margin="502,294,0,0" VerticalAlignment="Top" Click="addStepBtn_Click"/>
+        <Button x:Name="submitRecipeBtn" Content="Submit Recipe" HorizontalAlignment="Left" Margin="297,404,0,0" VerticalAlignment="Top" Click="submitRecipeBtn_Click"/>
+        <Button x:Name="goBackBtn" Content="Go Back" HorizontalAlignment="Left" Margin="400,404,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,22 @@
+﻿<Window x:Class="recipeApp.scaleRecipe"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:recipeApp"
+        mc:Ignorable="d"
+        Title="scaleRecipe" Height="450" Width="800">
+    <Grid>
+        <Label Content="Enter Recipe Name to Scale:" HorizontalAlignment="Center" Margin="0,29,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBox x:Name="recInputBox" HorizontalAlignment="Center" Margin="0,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164"/>
+        <Label Content="Enter Scale Amount:" HorizontalAlignment="Center" Margin="0,163,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <ComboBox x:Name="scaleCBox" HorizontalAlignment="Center" Margin="0,217,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0">
+            <ComboBoxItem Content="0.5"/>
+            <ComboBoxItem Content="2"/>
+            <ComboBoxItem Content="3"/>
+        </ComboBox>
+        <Button x:Name="scaleRecipeBtn" Content="Scale Recipe" HorizontalAlignment="Left" Margin="284,304,0,0" VerticalAlignment="Top" Click="scaleRecipeBtn_Click"/>
+        <Button x:Name="goBackBtn" Content="Go Back" HorizontalAlignment="Left" Margin="469,304,0,0" VerticalAlignment="Top" Click="goBackBtn_Click_1"/>
+
+    </Grid>
+</Window>

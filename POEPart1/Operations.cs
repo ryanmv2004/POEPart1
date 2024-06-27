@@ -19,7 +19,7 @@ namespace POEPart1
             Console.WriteLine("Please enter the name of the recipie:");
             String name = Console.ReadLine(); //Prompts the user for the name of the recipie and stores it in a string
 
-            Recipe recipe = new Recipe(name); //Creates a new Recipe object with the recipe name provided
+            Recipe recipe = new Recipe(); //Creates a new Recipe object with the recipe name provided
             recipe.OnCaloriesExceeded += message => Console.WriteLine(message);
 
             Console.WriteLine();
@@ -178,6 +178,7 @@ namespace POEPart1
                 }
             }
 
+            
         }
 
         public void deleteRecipies(String name) //method that clears each array from memory

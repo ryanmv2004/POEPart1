@@ -16,12 +16,15 @@ namespace POEPart1
         public delegate void CaloriesExceededHandler(string message);
         public event CaloriesExceededHandler OnCaloriesExceeded; //Delegates and events for the calories exceeded message
 
+        public Recipe() 
+        { 
+        }
 
-        public Recipe(string name)  //Parameterised constructor
+        public Recipe(String name, List<Ingredients> ing, List<Steps> step)  //Parameterised constructor
         {
             this.name = name;
-            ingredients = new List<Ingredients>();
-            steps = new List<Steps>();
+            ingredients = ing;
+            steps = step;
         }
 
         public double CalculateTotalCalories() //Method that calculates the total calories of the recipe
@@ -43,6 +46,7 @@ namespace POEPart1
         public String toString() //https://www.geeksforgeeks.org/stringbuilder-class-in-java-with-examples/ used this website for help setting up the StringBuilder Library Method.
         {
             StringBuilder sb = new StringBuilder();
+            sb.Append("Recipe Name: ");
             sb.Append(name + "\n");
             sb.Append("Ingredients:\n");
             foreach (Ingredients i in ingredients)
